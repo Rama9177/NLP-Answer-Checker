@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Question and Ideal Answer</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <div class="input-field col s12">
+            {{ form.question.label }}
+            {{ form.question(class="validate") }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            {{ form.ideal_answer.label }}
+            {{ form.ideal_answer(class="materialize-textarea validate", style="height: 200px;") }}
+        </div>
+    </div>
+    <div class="row center-align">
+        {{ form.submit(class="btn waves-effect waves-light") }}
+    </div>
+</form>
+{% endblock %}

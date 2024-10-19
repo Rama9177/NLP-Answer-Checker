@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Take Test</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {% for question in questions %}
+        <div class="row">
+            <div class="input-field col s12">
+                <label>{{ question.question_text }}</label>
+                <textarea name="answers" class="materialize-textarea" required></textarea>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="row center-align">
+        {{ form.submit(class="btn waves-effect waves-light") }}
+    </div>
+</form>
+{% endblock %}

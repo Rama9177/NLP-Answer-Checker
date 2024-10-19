@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Mock Evaluation Results</h2>
+
+<!-- Improved layout with cards for better readability -->
+<div class="row">
+    {% for result in results %}
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <h5>Question:</h5>
+                <p>{{ result.question }}</p>
+
+                <h5>Your Answer:</h5>
+                <p>{{ result.user_answer }}</p>
+
+                <!-- Displaying scores with badges -->
+                <h6>Final Evaluation Score: <span class="new badge blue">{{ result.final_score }}</span></h6>
+                <h6>Keyword Match Score: <span class="new badge green">{{ result.keyword_score }}</span></h6>
+                <h6>Semantic Similarity Score: <span class="new badge red">{{ result.semantic_score }}</span></h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Back to form button -->
+<div class="row center-align">
+    <a href="{{ url_for('mock_form') }}" class="btn waves-effect waves-light">Back to Form</a>
+</div>
+{% endblock %}

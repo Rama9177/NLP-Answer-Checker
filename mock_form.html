@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Mock Evaluation Form</h2>
+<form method="POST" action="">
+    {% for question in questions %}
+    <div class="row">
+        <div class="input-field col s12">
+            <h5>{{ question.question_text }}</h5>
+            <textarea name="answers" class="materialize-textarea validate" style="height: 200px;"></textarea>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row center-align">
+        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+    </div>
+</form>
+{% endblock %}

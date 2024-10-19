@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Evaluate Answer</h2>
+<div class="row">
+    <div class="input-field col s12">
+        <select id="question-select">
+            <option value="" disabled selected>Choose a question</option>
+            {% for question in questions %}
+            <option value="{{ question.id }}">{{ question.question_text }}</option>
+            {% endfor %}
+        </select>
+        <label>Select Question</label>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s12">
+        <textarea id="user-answer" class="materialize-textarea validate" style="height: 200px;"></textarea>
+        <label for="user-answer">Your Answer</label>
+    </div>
+</div>
+<div class="row center-align">
+    <button id="evaluate-btn" class="btn waves-effect waves-light">Evaluate</button>
+</div>
+<div class="row center-align">
+    <div id="evaluation-results"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+
+    document.getElementById('evaluate-btn').addEventListener('click', function() {
+        var questionId = document.getElementById('question-select').value;
+        var userAnswer = document.getElementById('user-answer').value;
+
+        fetch('/api/evaluate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                question_id: questionId,
+                user_answer: userAnswer
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                document.getElementById('evaluation-results').innerHTML = `<h5>${data.error}</h5>`;
+            } else {
+                document.getElementById('evaluation-results').innerHTML = `
+                    <h5>Final Evaluation Score: ${data.final_score}</h5>
+                    <h6>Keyword Match Score: ${data.keyword_score}</h6>
+                    <h6>Semantic Similarity Score: ${data.semantic_score}</h6>
+                `;
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Evaluate Your Answers</h2>
+<form id="evaluation-form">
+    {% for question in questions %}
+    <div class="row">
+        <div class="input-field col s12">
+            <p><strong>Question {{ loop.index }}:</strong> {{ question.question_text }}</p>
+            <textarea id="answer-{{ question.id }}" class="materialize-textarea validate" style="height: 100px;"></textarea>
+            <label for="answer-{{ question.id }}">Your Answer</label>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row center-align">
+        <button type="button" id="evaluate-btn" class="btn waves-effect waves-light">Evaluate</button>
+    </div>
+</form>
+<div class="row center-align">
+    <div id="evaluation-results"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems);
+
+    document.getElementById('evaluate-btn').addEventListener('click', function() {
+        var form = document.getElementById('evaluation-form');
+        var formData = [];
+
+        {% for question in questions %}
+        formData.push({
+            question_id: {{ question.id }},
+            user_answer: document.getElementById('answer-{{ question.id }}').value
+        });
+        {% endfor %}
+
+        fetch('/api/evaluate-multiple', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            var resultsContainer = document.getElementById('evaluation-results');
+            resultsContainer.innerHTML = '';
+            data.forEach(result => {
+                if (result.error) {
+                    resultsContainer.innerHTML += `<h5>${result.error}</h5>`;
+                } else {
+                    resultsContainer.innerHTML += `
+                        <h5>Question ID: ${result.question_id}</h5>
+                        <h6>Final Evaluation Score: ${result.final_score.toFixed(2)}</h6>
+                        <h6>Keyword Match Score: ${result.keyword_score.toFixed(2)}</h6>
+                        <h6>Semantic Similarity Score: ${result.semantic_score.toFixed(2)}</h6>
+                    `;
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

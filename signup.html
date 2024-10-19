@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="center-align">Sign Up</h2>
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form.username.label }}
+                {{ form.username(class="validate") }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form.password.label }}
+                {{ form.password(class="validate") }}
+            </div>
+        </div>
+        <div class="row center-align">
+            {{ form.submit(class="btn waves-effect waves-light") }}
+        </div>
+    </form>
+</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="row">
+            {% for category, message in messages %}
+                <div class="col s12">
+                    <div class="card-panel {{ category }}">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+{% endblock %}

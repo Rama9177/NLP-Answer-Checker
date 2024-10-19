@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>User Evaluation Results</h2>
+<table class="striped">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Question</th>
+            <th>User Answer</th>
+            <th>Final Score</th>
+            <th>Keyword Score</th>
+            <th>Semantic Score</th>
+            <th>Rounded Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.username }}</td>
+            <td>{{ result.question }}</td>
+            <td>{{ result.user_answer }}</td>
+            <td>{{ result.final_score }}</td>
+            <td>{{ result.keyword_score }}</td>
+            <td>{{ result.semantic_score }}</td>
+            <td>{{ result.rounded_score }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

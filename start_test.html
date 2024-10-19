@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Start Test</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <div class="input-field col s12">
+            {{ form.user_name.label }}
+            {{ form.user_name(class="validate") }}
+        </div>
+    </div>
+    <div class="row center-align">
+        {{ form.submit(class="btn waves-effect waves-light") }}
+    </div>
+</form>
+{% endblock %}
