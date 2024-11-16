@@ -23,6 +23,19 @@ app.config['MYSQL_DB'] = 'teacher_part'
 
 mysql = MySQL(app)
 
+# Set English stopwords
+
+
+# Preprocess text
+
+
+
+ #nltk.download('punkt')
+ #nltk.download('wordnet')
+ #nltk.download('vader_lexicon')
+
+
+
 import random
 
 def evaluate(expected, response):
