@@ -68,7 +68,7 @@
             {% endif %}
         {% endwith %}
 
-        <form method="POST" action="{{ url_for('admin_signup1') }}">
+        <form method="POST" action="{{ url_for('admin_signup1') }}" >
 
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -97,7 +97,7 @@
             </button>
         </form>
         
-        <p>Already have an account? <a href="{{ url_for('admin_login') }}">Login here</a></p>
+        <p>Already have an account? <a href="{{ url_for('admin_login') }}" target="_self">Login here</a></p>
     </div>
 </body>
 </html>

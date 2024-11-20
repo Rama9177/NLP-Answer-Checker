@@ -9,7 +9,7 @@
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand">Teacher Panel</a>
+        <a class="navbar-brand" target="_self">Teacher Panel</a>
          <!-- href="{{ url_for('teacher_home') }}">Teacher Panel</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,17 +17,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('teacher_home') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('teacher_home') }}" target="_self">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('teacher_view_score') }}">Score <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('teacher_view_score') }}" target="_self">Score <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('my_issues') }}">Student_isuues <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('my_issues') }}" target="_self">Student_isuues <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('teacher_logout') }}">Logout</a>
+                    <a class="nav-link text-white" href="{{ url_for('teacher_logout') }}" target="_self">Logout</a>
                 </li>
             </ul>
         </div>
@@ -60,7 +60,7 @@
 <ul class="list-group bg-dark"> <!-- Add bg-dark class for dark background -->
     {% for test in tests %}
         <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-white"> <!-- Add bg-dark and text-white classes for dark theme -->
-            <a href="{{ url_for('view_teacher_test_questions', test_id=test[0]) }}" class="text-white">{{ test[1] }}</a> <!-- Add text-white class for light text -->
+            <a href="{{ url_for('view_teacher_test_questions', test_id=test[0]) }}" class="text-white" target="_self">{{ test[1] }}</a> <!-- Add text-white class for light text -->
 
             <div class="btn-group">
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTestModal{{ test[0] }}">Edit</button>

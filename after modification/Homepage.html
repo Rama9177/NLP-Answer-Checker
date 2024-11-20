@@ -56,25 +56,25 @@
                     <nav id="nav-main">
                         <ul>
                             <li>
-                                <a href="#banner" style="opacity: 1; color: #424242; background-color: #FFFFFF;">Home</a>
+                                <a href="#banner" style="opacity: 1; color: #424242; background-color: #FFFFFF;" target="_self">Home</a>
                             </li>
                             <li>
-                                <a href="#about" style="opacity: 1; color: #424242; background-color: #FFFFFF;">About</a>
+                                <a href="#about" style="opacity: 1; color: #424242; background-color: #FFFFFF;" target="_self">About</a>
                             </li>
                             <li>
-                                <a href="#services" style="opacity: 1; color: #424242; background-color: #FFFFFF;">Teachnology</a>
+                                <a href="#services" style="opacity: 1; color: #424242; background-color: #FFFFFF;" target="_self">Teachnology</a>
                             </li>
                             <li>
-                                <a href="#testimonials" style="opacity: 1; color: #424242; background-color: #FFFFFF;">Team</a>
+                                <a href="#testimonials" style="opacity: 1; color: #424242; background-color: #FFFFFF;" target="_self">Team</a>
                             </li>
                             <li>
-                              <a href="{{ url_for('admin_home') }}">Admin</a>
+                              <a href="{{ url_for('admin_home') }}" target="_self">Admin</a>
                           </li>
                             <li>
-                              <a href="{{ url_for('student_home') }}">Student</a>
+                              <a href="{{ url_for('student_home') }}" target="_self">Student</a>
                           </li>
                             <li>
-                              <a href="{{ url_for('teacher_home') }}">Teacher</a>
+                              <a href="{{ url_for('teacher_home') }}"  target="_self">Teacher</a>
                           </li>
                         </ul>
                     </nav>
@@ -101,7 +101,7 @@
                     </ul>
                 </div>
                 <!--Call to Action-->
-                <a href="#about" class="button">START CREATING TODAY</a>
+                <a href="#about" class="button" target="_self">START CREATING TODAY</a>
                 <!--End Call to Action-->
 
             </div>
@@ -231,7 +231,7 @@
                 <!--End Content Right Side-->
         
                 <div class="col-3">
-                    <img src="{{ url_for('static',filename='images/logo1animate.gif') }}" alt="Animated logo showing artificial intelligence and education symbols in motion"/>
+                    <img src="{{ url_for('static',filename='images/logo1animate.gif') }}" alt="motion image for the page ansswer checker for"/>
                     <!-- <img src="{{ url_for('static', filename='images/user-images/user-3.jpg') }}" alt="animation logo for beauty" /> -->
                 </div>
         
@@ -254,7 +254,7 @@
 
                 <!--User Testimonial-->
                 <blockquote class="col-3 testimonial classic">
-                    <img src="{{ url_for('static', filename='images/user-images/user-3.jpg') }}" alt="Profile photo of Sravani, Project Team Lead wearing professional attire" />
+                    <img src="{{ url_for('static', filename='images/user-images/user-3.jpg') }}" alt="Sravani, Project Team Lead" />
                     <q>Hey, I'm Sravani Gorantla</q>
                     <!-- <img src="{{url_for('static',filename="images/user-images/user-3.jpg")}}" alt="team lead,Sravani"/>
                     <q>Hey im Sravani Gorantla</q> -->
@@ -299,8 +299,8 @@
                         <blockquote class="testimonial classic">
                             <img src="{{ url_for('static', filename='images/banner-images/admin_image.jpg') }}" alt="Administrator dashboard interface showing data analytics and control panels"/>
                         </blockquote>
-                        <a href="{{ url_for('admin_home') }}" class="button">Login as Admin</a>
-                        <a href="{{ url_for('admin_signup') }}" class="button">SignUP as Admin</a>
+                        <a href="{{ url_for('admin_home') }}" class="button" target="_self">Login as Admin</a>
+                        <a href="{{ url_for('admin_signup') }}" class="button" target="_self" >SignUP as Admin</a>
 
                     </div>
                 </div>
@@ -314,7 +314,7 @@
                             <img src="{{ url_for('static', filename='images/banner-images/teacher_image.jpg') }}" alt="Teacher working with digital education tools in a classroom setting"/>
                         </blockquote>
                         
-                        <a href="{{ url_for('teacher_home') }}" class="button">Login as Teacher</a>
+                        <a href="{{ url_for('teacher_home') }}" class="button" target="_self">Login as Teacher</a>
                     </div>
                 </div>
                 <!--End Pricing Block-->
@@ -327,7 +327,7 @@
                             <img src="{{ url_for('static', filename='images/banner-images/student_image2.gif') }}" alt="Animated illustration of students actively engaged in online learning"/>
                         </blockquote>
 
-                        <a href="{{ url_for('student_home') }}" class="button">Login as Student</a>
+                        <a href="{{ url_for('student_home') }}" class="button" target="_self">Login as Student</a>
                     </div>
                 </div>
                 <!--End Pricing Block-->

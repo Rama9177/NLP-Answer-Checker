@@ -11,23 +11,23 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Change navbar-light to navbar-dark and bg-light to bg-dark -->
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('admin_home') }}">Admin Panel</a>
+            <a class="navbar-brand" href="{{ url_for('admin_home') }}" target="_self">Admin Panel</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_home') }}">Home</a>
+                        <a class="nav-link" href="{{ url_for('admin_home') }}" target="_self">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_teachers') }}">Teachers</a>
+                        <a class="nav-link" href="{{ url_for('admin_teachers') }}" target="_self">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_students') }}">Students</a>
+                        <a class="nav-link" href="{{ url_for('admin_students') }}" target="_self">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
+                        <a class="nav-link" href="{{ url_for('admin_logout') }}" target="_self">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -101,7 +101,7 @@
             {% endfor %}
         </div>
 
-        <a href="{{ url_for('admin_home') }}" class="btn btn-primary">Back to Dashboard</a>
+        <a href="{{ url_for('admin_home') }}" class="btn btn-primary" target="_self">Back to Dashboard</a>
     </div>
 
     <!-- Bootstrap JS -->

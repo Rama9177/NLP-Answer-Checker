@@ -27,13 +27,13 @@
                     <td>{{ test[0] }}</td>
                     <td>{{ test[1] }}</td>
                     <td>
-                        <a href="{{ url_for('view_test_questions', test_id=test[0]) }}" class="btn btn-info" style="opacity: 1; color: #FFFFFF; background-color: #0E606C">View Questions</a>
+                        <a href="{{ url_for('view_test_questions', test_id=test[0]) }}" class="btn btn-info" style="opacity: 1; color: #FFFFFF; background-color: #0E606C" target="_self">View Questions</a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{ url_for('admin_teachers') }}" class="btn btn-primary" style="opacity: 1; color: #FFFFFF; background-color: #004C9E">Back to Teacher List</a>
+        <a href="{{ url_for('admin_teachers') }}" class="btn btn-primary" style="opacity: 1; color: #FFFFFF; background-color: #004C9E" target="_self">Back to Teacher List</a>
     </div>
 </body>
 </html>

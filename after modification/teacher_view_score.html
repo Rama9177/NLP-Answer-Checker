@@ -43,7 +43,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand">Teacher Panel</a>
+        <a class="navbar-brand" target="_self">Teacher Panel</a>
         <!-- href="{{ url_for('teacher_home') }}">Teacher Panel</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,13 +51,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('teacher_home') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('teacher_home') }}" target="_self">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('teacher_view_score') }}">Score <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('teacher_view_score') }}" target="_self">Score <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('teacher_logout') }}">Logout</a>
+                    <a class="nav-link text-white" href="{{ url_for('teacher_logout') }}" target="_self">Logout</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +71,7 @@
                 <div class="card bg-dark text-white"> <!-- Add bg-dark and text-white classes for dark theme -->
                     <div class="card-body">
                         <h1 class="card-title">
-                            <a href="#" data-toggle="modal" data-target="#studentModal-{{ student_id }}" style="opacity: 1; color: #2990FF; background-color: #0F0F10;">
+                            <a href="#" data-toggle="modal" data-target="#studentModal-{{ student_id }}" style="opacity: 1; color: #2990FF; background-color: #0F0F10;" target="_self">
                                 {{ student_data.student_username }}
                             </a>
                             

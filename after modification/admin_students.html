@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Change navbar-light to navbar-dark and bg-light to bg-dark -->
         <div class="container">
-            <a class="navbar-brand">Admin Panel</a>
+            <a class="navbar-brand" target="_self">Admin Panel</a>
             <!-- href="{{ url_for('admin_home') }}">Admin Panel</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_home') }}">
+                        <a class="nav-link" href="{{ url_for('admin_home') }}" target="_self">
                             <strong style="opacity: 1; color: rgb(255, 255, 255); background-color: rgb(34, 40, 49);">
                                 Home
                             </strong>
@@ -28,7 +28,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_teachers') }}">
+                        <a class="nav-link" href="{{ url_for('admin_teachers') }}" target="_self">
                             <strong style="opacity: 1; color: rgb(255, 255, 255); background-color: rgb(34, 40, 49);">
                                 Teacher
                             </strong>
@@ -36,7 +36,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('admin_students')}}">
+                        <a class="nav-link" href="{{url_for('admin_students')}}" target="_self">
                             <strong style="opacity: 1; color: rgb(255, 255, 255); background-color: rgb(34, 40, 49);">
                                 Student
                             </strong>
@@ -44,7 +44,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_logout') }}">
+                        <a class="nav-link" href="{{ url_for('admin_logout') }}" target="_self">
                             <strong style="opacity: 1; color: rgb(255, 255, 255); background-color: rgb(34, 40, 49);">
                                 Logout
                             </strong>
@@ -129,7 +129,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('admin_home') }}" class="btn btn-danger">Back to Admin Home</a>
+    <a href="{{ url_for('admin_home') }}" class="btn btn-danger" target="_self">Back to Admin Home</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
